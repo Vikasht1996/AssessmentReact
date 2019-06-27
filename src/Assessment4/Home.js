@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BrowserHistory from '../Utilize/BrowserHistory';
+import './Homeform.css'
+ 
 class Home extends Component {
     onHandleClick = () =>{
         BrowserHistory.push('/login')
