@@ -3,11 +3,29 @@ import {connect} from 'react-redux';
 import './Registrationfrom.css'
 import BrowserHistory from '../Utilize/BrowserHistory';
 import {handle} from '../Actions/Registeraction'
-
 class Registrationfrom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fname:'',
+      lname:'',
+      username:'',
+      password:'',
+      ferr:'',
+      lerr:'',
+      uerr:'',
+      perr:'',
+      
+    };
+  }
+
   onHandleClick = () =>{
+  
     BrowserHistory.push('/login')
-}
+    
+    
+    }
+
   
     render() {
         return (
@@ -20,13 +38,14 @@ class Registrationfrom extends Component {
             <form >
             
           <label><b>First Name</b></label><br/>
-					<input type="text"  name="Fname" className="one" /><br/>
+					<input type="text"  name="Fname" className="one" onChange={this.onHandleClick}/><br/>
+          <p >{this.error}</p>
 					<label><b>Last Name</b></label><br/>
-					<input type="text"  name="Lname" className="one" /><br/>
+					<input type="text"  name="Lname" className="one" onChange={this.onHandleClick}/><br/>
                     <label ><b>Username</b></label><br/>
-					<input type="text"  name="Username" className="one" /><br/>
+					<input type="text"  name="Username" className="one" onChange={this.onHandleClick}/><br/>
 					<label ><b>Password</b></label><br/>
-					<input type="password"  name="Password" className="one" /><br/><br/>
+					<input type="password"  name="Password" className="one" onChange={this.onHandleClick}/><br/><br/>
           <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClick}>Cancel</a>
             </form>
             </div>
